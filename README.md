@@ -61,13 +61,20 @@ View all available params [here](https://glide.thephpleague.com/2.0/api/quick-re
 
 ## Config
 
-You may manually override the `base_url` and `cache_path_prefix`.
+The `server_config` follows the [regular config](https://glide.thephpleague.com/2.0/config/setup/) provided by `League\Glide\ServerFactory`. The only difference is that we've prepared it work with Laravel out of the box.
 
-The `base_url` is used to create the route and identify images which have to be processed using Glide.
+```php
+return [
 
-The `cache_path_prefix` will be used to store cached images.
+    'server_config' => [
 
-We recommend to keep the defaults: `glide-image` & `.glide-image-cache`.
+        'cache_path_prefix' => '.glide-image-cache',
+
+        'base_url' => 'glide-image',
+
+    ],
+];
+```
 
 ## Security Vulnerabilities
 
