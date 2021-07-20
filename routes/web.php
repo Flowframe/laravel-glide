@@ -5,7 +5,7 @@ use Illuminate\Contracts\Filesystem\Filesystem;
 use League\Glide\Responses\LaravelResponseFactory;
 use League\Glide\ServerFactory;
 
-Route::get(config('glide.base_url') . '/{path}', function (Filesystem $filesystem, string $path) {
+Route::get(config('glide.server_config')['base_url'] . '/{path}', function (Filesystem $filesystem, string $path) {
     $server = ServerFactory::create(array_merge([
         'response' => new LaravelResponseFactory(app('request')),
         'source' => $filesystem->getDriver(),
