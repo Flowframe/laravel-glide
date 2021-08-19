@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-glide` will be documented in this file.
 
+## 0.0.4 - 2022-08-19
+
+- Added web middleware
+
 ## 0.0.3 - 2022-07-20
 
 - Fixed `base_url` in route
