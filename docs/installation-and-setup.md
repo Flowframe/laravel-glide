@@ -78,3 +78,15 @@ php artisan laravel-glide:clear-image-cache
 ```
 
 Keep in mind that rebuilding the cache will increase loading times.
+
+## Cloudflare CDN best practice
+
+When your application uses the Cloudflare Proxy, and you want your Glide files to be served via Cloudflare's CDN, your routes need to be stateless. Stateless route need to match their [Default Cache Behavior](https://developers.cloudflare.com/cache/about/default-cache-behavior). For example, the URL needs to have a [file extension](https://developers.cloudflare.com/cache/about/default-cache-behavior#default-cached-file-extensions) like `.png`.
+
+Note: when your application sets a `session-id` on the response (for the specific URI), it won't be cached in Cloudflare Proxy.
+
+By default, Cloudflare caches the response on their proxy-server ([Edge Cache TTL](https://developers.cloudflare.com/cache/about/edge-browser-cache-ttl)) for a maximum time. You can define in your Cloudflare Account a longer period.
+
+When the requested URI doesn't match the Default Cache Behavior, you can make a custom rule to set `Cache Level = Cache Everything`.
+
+Want to check if the response is cached via Cloudflare Proxy? Take a look at [their documentation](https://developers.cloudflare.com/cache/about/default-cache-behavior#cloudflare-cache-responses) how you can validate this.
