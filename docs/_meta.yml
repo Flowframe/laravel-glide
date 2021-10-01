@@ -1,0 +1,6 @@
+url: https://github.com/flowframe/laravel-glide
+name: laravel-glide
+fullName: flowframe/laravel-glide
+description: Optimize your images on the fly with Glide for Laravel.
+language: PHP
+license: MIT
