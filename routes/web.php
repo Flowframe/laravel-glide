@@ -14,6 +14,5 @@ Route::get(config('glide.server_config')['base_url'] . '/{path}', function (File
 
     return $server->getImageResponse($path, request()->all());
 })
-    ->middleware('web')
     ->where('path', '.*')
     ->name('glide.image');
