@@ -35,12 +35,12 @@ View all available params [here](https://glide.thephpleague.com/2.0/api/quick-re
 ```php
 <x-glide::image
     src="my-image.png"
-    w="1280"
-    h="640"
-    q="80"
+    :w="1280"
+    :h="640"
+    :q="80"
     alt="My image"
     fit="contain"
-    format="webp"
+    :fm="webp"
     :params="[
         // ... glide params
     ]"
