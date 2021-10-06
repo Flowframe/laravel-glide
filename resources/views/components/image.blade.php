@@ -1,4 +1,4 @@
-@props(['src', 'w', 'h', 'alt' => ' ', 'q' => 100, 'fit' => 'contain', 'format' => 'webp', 'params' => []])
+@props(['src', 'w', 'h', 'alt' => ' ', 'q' => 100, 'fit' => 'contain', 'fm' => 'webp', 'params' => []])
 
 @php
 $image = glide(
@@ -6,7 +6,7 @@ $image = glide(
     array_merge($params, [
         'w' => $w,
         'h' => $h,
-        'q' => $quality,
+        'q' => $q,
         'fit' => $fit,
         'fm' => $format,
     ]),
