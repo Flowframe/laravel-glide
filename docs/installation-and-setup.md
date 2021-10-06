@@ -12,7 +12,9 @@ composer require flowframe/laravel-glide
 
 You can easily publish the config like so:
 
+```
 php artisan vendor:publish --tag=glide-config
+```
 
 ## Usage
 
