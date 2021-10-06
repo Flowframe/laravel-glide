@@ -8,7 +8,7 @@ $image = glide(
         'h' => $h,
         'q' => $q,
         'fit' => $fit,
-        'fm' => $format,
+        'fm' => $fm,
     ]),
 );
 @endphp
