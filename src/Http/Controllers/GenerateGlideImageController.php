@@ -5,7 +5,6 @@ namespace Flowframe\LaravelGlide\Http\Controllers;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Http\Response;
 use League\Glide\Responses\LaravelResponseFactory;
-use League\Glide\Responses\SymfonyResponseFactory;
 use League\Glide\ServerFactory;
 use League\Glide\Signatures\SignatureException;
 use League\Glide\Signatures\SignatureFactory;
