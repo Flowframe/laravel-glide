@@ -2,12 +2,16 @@
 
 namespace Flowframe\LaravelGlide;
 
-class Glide
-{
-    public function buildUrl(string $image, array $params): string
-    {
-        $query = http_build_query($params);
+use Illuminate\Support\Facades\Facade;
 
-        return route('glide.image', "{$image}?{$query}");
+/**
+ * @see \Flowframe\LaravelGlide\Glide
+ * @method static string buildUrl(string $image, ?array $params)
+ */
+class Glide extends Facade
+{
+    protected static function getFacadeAccessor(): string
+    {
+        return GlideManager::class;
     }
 }

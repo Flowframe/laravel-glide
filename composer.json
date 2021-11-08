@@ -56,7 +56,7 @@
                 "Flowframe\\LaravelGlide\\GlideServiceProvider"
             ],
             "aliases": {
-                "Glide": "Flowframe\\LaravelGlide\\GlideFacade"
+                "Glide": "Flowframe\\LaravelGlide\\Glide"
             }
         }
     },
