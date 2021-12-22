@@ -2,6 +2,7 @@
 
 namespace Flowframe\LaravelGlide\View\Components;
 
+use Flowframe\LaravelGlide\GlideManager;
 use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 use Illuminate\View\View;
@@ -9,6 +10,7 @@ use Illuminate\View\View;
 class ResponsiveImage extends Component
 {
     public function __construct(
+        private GlideManager $glide,
         public string $src,
         public string $alt = ' ',
         public ?int $width = null,
@@ -26,10 +28,11 @@ class ResponsiveImage extends Component
 
     public function fallbackImage(): string
     {
-        return glide($this->src, array_filter([
+        return $this->glide->buildUrl($this->src, array_filter([
             'w' => $this->width,
             'h' => $this->height,
             'q' => $this->quality,
+            'fit' => $this->fit,
             'fm' => $this->format,
         ]));
     }
@@ -37,9 +40,10 @@ class ResponsiveImage extends Component
     public function responsiveImages(): string
     {
         return $this->sizes()->map(function (int $size): string {
-            $image = glide($this->src, array_filter([
+            $image = $this->glide->buildUrl($this->src, array_filter([
                 'w' => $size,
                 'q' => $this->quality,
+                'fit' => $this->fit,
                 'fm' => $this->format,
             ]));
 

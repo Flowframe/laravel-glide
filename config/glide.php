@@ -10,6 +10,8 @@ return [
         // ...
 
         'base_url' => 'glide',
+
+        'cache_path_prefix' => '.glide-cache',
     ],
 
     /**

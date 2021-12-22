@@ -13,6 +13,6 @@ class GlideManager
             config('glide.sign_key'),
         );
 
-        return url($urlBuilder->getUrl($path, $params));
+        return (string) url($urlBuilder->getUrl($path, $params));
     }
 }

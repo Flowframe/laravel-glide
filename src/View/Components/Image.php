@@ -2,12 +2,14 @@
 
 namespace Flowframe\LaravelGlide\View\Components;
 
+use Flowframe\LaravelGlide\GlideManager;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
 class Image extends Component
 {
     public function __construct(
+        private GlideManager $glide,
         public string $src,
         public string $alt = ' ',
         public ?int $width = null,
@@ -20,7 +22,7 @@ class Image extends Component
 
     public function image(): string
     {
-        return glide($this->src, array_filter([
+        return $this->glide->buildUrl($this->src, array_filter([
             'w' => $this->width,
             'h' => $this->height,
             'fm' => $this->format,
