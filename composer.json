@@ -34,7 +34,7 @@
             "Flowframe\\LaravelGlide\\": "src"
         },
         "files": [
-            "src/helpers.php"
+            "bootstrap/helpers.php"
         ]
     },
     "autoload-dev": {
@@ -54,10 +54,7 @@
         "laravel": {
             "providers": [
                 "Flowframe\\LaravelGlide\\GlideServiceProvider"
-            ],
-            "aliases": {
-                "Glide": "Flowframe\\LaravelGlide\\GlideFacade"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
